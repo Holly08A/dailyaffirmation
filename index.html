@@ -26,45 +26,53 @@
   .card::before {
     content: '';
     position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
+    top: -60%;
+    left: -60%;
+    width: 220%;
+    height: 220%;
     background: 
-      radial-gradient(circle at 20% 20%, rgba(255, 182, 193, 0.8) 0%, transparent 50%),
-      radial-gradient(circle at 80% 80%, rgba(255, 192, 203, 0.6) 0%, transparent 50%),
-      radial-gradient(circle at 40% 60%, rgba(255, 218, 225, 0.7) 0%, transparent 50%),
+      radial-gradient(ellipse at 25% 25%, rgba(255, 182, 193, 0.6) 0%, transparent 60%),
+      radial-gradient(ellipse at 75% 75%, rgba(255, 192, 203, 0.5) 0%, transparent 55%),
+      radial-gradient(ellipse at 45% 65%, rgba(255, 218, 225, 0.4) 0%, transparent 65%),
+      radial-gradient(ellipse at 65% 35%, rgba(255, 105, 180, 0.3) 0%, transparent 50%),
       linear-gradient(135deg, #ffeef8, #f8e8f0);
-    animation: liquidMove 8s ease-in-out infinite;
+    animation: liquidMove 12s ease-in-out infinite;
     z-index: -1;
   }
   
   .card::after {
     content: '';
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    top: -20%;
+    left: -20%;
+    width: 140%;
+    height: 140%;
     background: 
-      radial-gradient(circle at 60% 30%, rgba(255, 105, 180, 0.3) 0%, transparent 40%),
-      radial-gradient(circle at 30% 70%, rgba(255, 20, 147, 0.2) 0%, transparent 40%);
-    animation: liquidMove 6s ease-in-out infinite reverse;
+      radial-gradient(ellipse at 60% 30%, rgba(255, 105, 180, 0.25) 0%, transparent 45%),
+      radial-gradient(ellipse at 30% 70%, rgba(255, 20, 147, 0.15) 0%, transparent 45%),
+      radial-gradient(ellipse at 80% 20%, rgba(255, 182, 193, 0.2) 0%, transparent 40%);
+    animation: liquidMove 10s ease-in-out infinite reverse;
     z-index: -1;
   }
   
   @keyframes liquidMove {
     0%, 100% {
-      transform: translate(0, 0) rotate(0deg);
+      transform: translate(0, 0) rotate(0deg) scale(1);
     }
-    25% {
-      transform: translate(-10px, -15px) rotate(1deg);
+    16.66% {
+      transform: translate(-8px, -12px) rotate(0.8deg) scale(1.02);
+    }
+    33.33% {
+      transform: translate(6px, -8px) rotate(-0.6deg) scale(0.98);
     }
     50% {
-      transform: translate(5px, -10px) rotate(-1deg);
+      transform: translate(-4px, 3px) rotate(0.4deg) scale(1.01);
     }
-    75% {
-      transform: translate(-5px, 5px) rotate(0.5deg);
+    66.66% {
+      transform: translate(7px, -5px) rotate(-0.3deg) scale(0.99);
+    }
+    83.33% {
+      transform: translate(-3px, 8px) rotate(0.2deg) scale(1.005);
     }
   }
   
