@@ -1,0 +1,21 @@
+<!doctype html>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<style>
+  body { font: 16px/1.5 system-ui, -apple-system, Segoe UI, Roboto; margin: 0; }
+  .card { padding: 16px; }
+  .btn { cursor: pointer; padding: 8px 12px; border: 1px solid #ddd; border-radius: 8px; }
+</style>
+<div class="card">
+  <h3>Daily Affirmation</h3>
+  <p id="text">Loading…</p>
+  <button class="btn" id="next">New affirmation</button>
+</div>
+<script>
+async function load() {
+  const res = await fetch('https://www.affirmations.dev/');
+  const data = await res.json();
+  document.getElementById('text').textContent = data.affirmation || '—';
+}
+document.getElementById('next').onclick = load;
+load();
+</script>
